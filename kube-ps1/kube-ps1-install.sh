@@ -6,5 +6,5 @@ source /tmp/kube-ps1-0.7.0/kube-ps1.sh
 /tmp/kube-ps1-0.7.0/kube-ps1.sh
 kubeon -g
 chmod +x kube-ps1-startup.sh
-echo "bash --init-file /root/install-kubeps1/kube-ps1-startup.sh" >>/root/.profile
+echo "bash --init-file /root/pimp-my-bash/kube-ps1/kube-ps1-startup.sh" >>/root/.profile
 exit 0
