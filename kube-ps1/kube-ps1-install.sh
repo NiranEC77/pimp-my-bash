@@ -5,7 +5,7 @@ chmod +x /tmp/kube-ps1-0.7.0/kube-ps1.sh
 source /tmp/kube-ps1-0.7.0/kube-ps1.sh
 /tmp/kube-ps1-0.7.0/kube-ps1.sh
 kubeon -g
-chmod +x kube-ps1-startup.sh
+chmod +x /root/pimp-my-bash/kube-ps1/kube-ps1-startup.sh
 echo "bash --init-file /root/pimp-my-bash/kube-ps1/kube-ps1-startup.sh" >>/root/.profile
 PS1='[$(kube_ps1)]\$ '
 KUBE_PS1_SYMBOL_USE_IMG=true
