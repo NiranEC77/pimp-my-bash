@@ -8,4 +8,4 @@ kubeon -g
 chmod +x /root/pimp-my-bash/kube-ps1/kube-ps1-startup.sh
 echo "bash --init-file /root/pimp-my-bash/kube-ps1/kube-ps1-startup.sh" >>/root/.profile
 
-exit 0
+
