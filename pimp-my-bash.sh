@@ -5,6 +5,7 @@ apt-get -y install jq
 apt-get -y install pv
 
 #Install kube-ps1
+chmod +x kube-ps1/kube-ps1-install.sh
 source kube-ps1/kube-ps1-install.sh
 
 #Install kubectx
