@@ -13,7 +13,7 @@ PS1='[\e[0;33m\w $(kube_ps1)]\$ '
 
 #Install kubectx
 alias kubectx='kubectl config get-contexts'
-alias kubeset='kubectl config set-context'
+alias kubeset='kubectl config use-context'
 alias k=kubectl
 alias h='history |grep'
 exit 0
