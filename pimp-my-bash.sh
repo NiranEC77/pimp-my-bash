@@ -31,7 +31,7 @@ alias k=kubectl
 alias h='history |grep'
 
 
-PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{yellow}%1~%f%b'
+PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{yellow}%1~%f%b%)'
 source ~/kube-ps1/kube-ps1.sh
 PROMPT='$(kube_ps1)'$PROMPT
 
