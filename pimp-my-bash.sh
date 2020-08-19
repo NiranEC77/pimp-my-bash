@@ -34,15 +34,8 @@ alias h='history |grep'
 PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{yellow}%1~%f%b%)'
 source ~/kube-ps1/kube-ps1.sh
 PROMPT='$(kube_ps1)'$PROMPT
-
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-RPROMPT=\$vcs_info_msg_0_
-zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
-zstyle ':vcs_info:*' enable git
-
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
 
 
 #If zsh not working run 'zsh' to test and add the follwing to .bashrc #
