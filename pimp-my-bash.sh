@@ -23,6 +23,22 @@ sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
 #Change default shell
 sudo chsh -s $(which zsh)
 
+#Download zsh-autosuggestions by
+sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+#Download zsh-syntax-highlighting by
+sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
+#create folder for kubectl plugin cache 
+sudo mkdir  /usr/local/zshcache
+
+#change permissions
+sudo chmod 777 /usr/local/zshcache
+
+#append the o=folowing lines to .zshrc before source (note plugins is already there)
+plugins=(git kubectl docker kube-ps1 themes history common-aliases colored-man-pages zsh-autosuggestions zsh-syntax-highlighting )
+ZSH_CACHE_DIR=/usr/local/zshcache
+
 
 #Alias
 alias kubectx='kubectl config get-contexts'
