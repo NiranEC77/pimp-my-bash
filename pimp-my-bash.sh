@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 apt-get -y install jq
 
 #Install pv for the demo-scripts
@@ -12,7 +12,7 @@ chmod +x kube-ps1/kube-ps1.sh
 #PS1='[\e[0;33m\w $(kube_ps1)]\$ '
 
 #Install zsh
-sudo apt install zsh
+sudo apt -y install zsh
 
 #Install ohmyzsh
 sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -36,22 +36,23 @@ sudo mkdir  /usr/local/zshcache
 sudo chmod 777 /usr/local/zshcache
 
 #append the o=folowing lines to .zshrc before source (note plugins is already there)
-plugins=(git kubectl docker kube-ps1 themes history common-aliases colored-man-pages zsh-autosuggestions zsh-syntax-highlighting )
-ZSH_CACHE_DIR=/usr/local/zshcache
+sed -i 's/plugins=(git/plugins=(git kubectl docker kube-ps1 themes history common-aliases colored-man-pages zsh-autosuggestions zsh-syntax-highlighting/' 
+#.zshrc plugins=(git kubectl docker kube-ps1 themes history common-aliases colored-man-pages zsh-autosuggestions zsh-syntax-highlighting )
+echo "ZSH_CACHE_DIR=/usr/local/zshcache" >>.zshrc
 
 
 #Alias
-alias kubectx='kubectl config get-contexts'
-alias kubeset='kubectl config use-context'
-alias k=kubectl
-alias h='history |grep'
+echo "alias kubectx='kubectl config get-contexts'" >>.zshrc
+echo alias kubeset='kubectl config use-context' >>.zshrc
+echo alias k=kubectl >>.zshrc
+echo alias h='history |grep' >>.zshrc
 
 
-PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{yellow}%1~%f%b%)'
-source ~/kube-ps1/kube-ps1.sh
-PROMPT='$(kube_ps1)'$PROMPT
-bindkey '^[[H' beginning-of-line
-bindkey '^[[F' end-of-line
+echo "PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{yellow}%1~%f%b%)'" >>.zshrc
+echo "source ~/kube-ps1/kube-ps1.sh" >>.zshrc
+echo "PROMPT='$(kube_ps1)'$PROMPT" >>.zshrc
+echo "bindkey '^[[H' beginning-of-line" >>.zshrc
+echo "bindkey '^[[F' end-of-line" >>.zshrc
 
 
 #If zsh not working run 'zsh' to test and add the follwing to .bashrc #
