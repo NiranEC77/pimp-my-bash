@@ -36,23 +36,23 @@ sudo mkdir  /usr/local/zshcache
 sudo chmod 777 /usr/local/zshcache
 
 #append the o=folowing lines to .zshrc before source (note plugins is already there)
-sed -i 's/plugins=(git/plugins=(git kubectl docker kube-ps1 themes history common-aliases colored-man-pages zsh-autosuggestions zsh-syntax-highlighting/' 
+sed -i 's/plugins=(git/plugins=(git kubectl docker kube-ps1 themes history common-aliases colored-man-pages zsh-autosuggestions zsh-syntax-highlighting/' ~/.zshrc 
 #.zshrc plugins=(git kubectl docker kube-ps1 themes history common-aliases colored-man-pages zsh-autosuggestions zsh-syntax-highlighting )
-echo "ZSH_CACHE_DIR=/usr/local/zshcache" >>.zshrc
+echo "ZSH_CACHE_DIR=/usr/local/zshcache" >>~/.zshrc
 
 
 #Alias
-echo "alias kubectx='kubectl config get-contexts'" >>.zshrc
-echo alias kubeset='kubectl config use-context' >>.zshrc
-echo alias k=kubectl >>.zshrc
-echo alias h='history |grep' >>.zshrc
+echo "alias kubectx='kubectl config get-contexts'" >>~/.zshrc
+echo alias kubeset='kubectl config use-context' >>~/.zshrc
+echo alias k=kubectl >>~/.zshrc
+echo alias h='history |grep' >>~/.zshrc
 
 
-echo "PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{yellow}%1~%f%b%)'" >>.zshrc
-echo "source ~/kube-ps1/kube-ps1.sh" >>.zshrc
-echo "PROMPT='$(kube_ps1)'$PROMPT" >>.zshrc
-echo "bindkey '^[[H' beginning-of-line" >>.zshrc
-echo "bindkey '^[[F' end-of-line" >>.zshrc
+echo "PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{yellow}%1~%f%b%)'" >>~/.zshrc
+echo "source ~/kube-ps1/kube-ps1.sh" >>~/.zshrc
+echo "PROMPT='$(kube_ps1)'$PROMPT" >>~/.zshrc
+echo "bindkey '^[[H' beginning-of-line" >>~/.zshrc
+echo "bindkey '^[[F' end-of-line" >>~/.zshrc
 
 
 #If zsh not working run 'zsh' to test and add the follwing to .bashrc #
